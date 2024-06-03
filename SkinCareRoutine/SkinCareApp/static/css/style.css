@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://www.realsimple.com/thmb/xK2HWXU3m239Qi7G531G0urCeEI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/skincare-routine-stress-2000-c5e8cf3a43bf4027a959a6241e1e491a.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar {
+    background-color: burlywood;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.navbar-brand:hover {
+    color: pink;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: pink;
+}
+
+.dropdown-menu {
+    background-color: white;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.slogans {
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.slogans p {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.discover-button {
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 999; 
+}

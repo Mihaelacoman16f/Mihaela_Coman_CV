@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Types</title>
+</head>
+<body>
+    <a class="navbar-brand" href="/home/">HOME PAGE</a>
+    <h1>Skin Types</h1>
+    <p>Hello!
+        Are you interested in learning about the different types of skin accepted in dermatocosmetology?
+        Let's share some information about that!</p>
+    {% for skin in skin_types %}
+        <div>
+            <h2>{{ skin.name }}</h2>
+            <p><strong>Description:</strong> {{ skin.description }}</p>
+            <p><strong>Advantages:</strong> {{ skin.advantages }}</p>
+            <p><strong>Disadvantages:</strong> {{ skin.disadvantages }}</p>
+        </div>
+    {% endfor %}
+    <p>If you wish to determine your skin type, we invite you to take a short test.</p>
+    <a href="/skin-type-form/" class="btn btn-primary discover-button">Click here to make the test! ♥ </a>
+</body>
+</html>

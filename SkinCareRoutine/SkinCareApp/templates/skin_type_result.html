@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Type Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/1299083633/vector/abstract-scene-background-cylinder-podium-on-pink-background-product-presentation-mock-up.jpg?s=612x612&w=0&k=20&c=JRjs-XAnsRFPwOs7QogTQzPHf5G6bjrz-PRzFNHuUgM='); /* înlocuiește 'link_catre_imagine.jpg' cu link-ul imaginii tale */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 50px;
+        }
+        .card-title,
+        .card-text {
+            color: pink; 
+        }7
+    </style>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h1 class="mb-4">Your Skin Type Result</h1>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">{{ skin_type.name }}</h1>
+                <p class="card-text">Description: {{ skin_type.description }}</p>
+                <p class="card-text">Excellent! Now let's see together what products suit you best!</p>
+                <p class="card-text">Please select the result that matches your skin type.</p>
+                <a href="/routine-products/{{ skin_type.name }}" class="btn btn-primary">Click here to view our recommends! ♡</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+</body>
+</html>

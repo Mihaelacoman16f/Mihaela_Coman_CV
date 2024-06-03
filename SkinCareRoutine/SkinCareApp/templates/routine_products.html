@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Routines for Different Skin Types</title>
+    <style>
+        img {
+            max-width: 200px; 
+            height: 200px; 
+            display: center; 
+            margin-bottom: 100px; 
+        }
+    </style>
+</head>
+<body>
+    <a class="navbar-brand" href="/home/">HOME PAGE</a>
+    
+    <h1>Skincare Routine for {{ skin_type.name }}</h1>
+    <p>{{ skin_type.description }}</p>
+    <p>We recommend the following skincare routine and some products that can help improve the appearance of your skin: </p>
+    
+    {% for routine in routines %}
+    <h2>❤️{{routine.name}}</h2>
+    <p>{{routine.description}}</p>
+    
+    {% for product in routine.products.all %}
+    <br>
+    <h3>{{product.name}}</h3>
+    <a href="{{product.product_url}}">Product Link</a>
+    <p>{{product.description_product}}</p>
+    <img src="{{product.image_url}}" alt="Img">
+    {% endfor %}
+    
+    {% endfor %}
+
+</body>
+</html>

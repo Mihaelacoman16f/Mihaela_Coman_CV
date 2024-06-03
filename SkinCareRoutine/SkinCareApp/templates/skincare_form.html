@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Type Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/1313104696/photo/purple-background-painting-on-canvas-acrylic-painting.jpg?s=612x612&w=0&k=20&c=sQXLUtDn6E50_V1sKiKnCuriyomIT9kjXsYMhNgpBRE='); /* înlocuiește 'link_catre_imagine.jpg' cu link-ul imaginii tale */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1>Hello {{user.username}}!</h1>
+        <h1 class="mb-4">Let's Discover Your Skin Type Together!</h1>
+        <p class="lead">Take this quick quiz to find out what type of skin you have.</p>
+
+        <form action="/skin-type-result/" method="post">
+            
+            {% csrf_token %}
+            <br>
+            <div class="form-group">
+                <label for="dry_skin">Do you feel your skin dry?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="dry_skin" id="dry_yes" value="Yes">
+                    <label class="form-check-label" for="dry_yes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="dry_skin" id="dry_no" value="No">
+                    <label class="form-check-label" for="dry_no">No</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="oily_t_zone">Do you have excess sebum in the T-zone area?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="oily_t_zone" id="oily_yes" value="Yes">
+                    <label class="form-check-label" for="oily_yes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="oily_t_zone" id="oily_no" value="No">
+                    <label class="form-check-label" for="oily_no">No</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="large_pores">Do you have enlarged pores?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="large_pores" id="pores_yes" value="Yes">
+                    <label class="form-check-label" for="pores_yes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="large_pores" id="pores_no" value="No">
+                    <label class="form-check-label" for="pores_no">No</label>
+                </div>
+            </div>
+            
+            <!-- New questions -->
+            <br>
+            <div class="form-group">
+                <label for="cold_feel">How does your skin feel in cold weather?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cold_feel" id="cold_tight" value="Tight">
+                    <label class="form-check-label" for="cold_tight">It feels tight</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cold_feel" id="cold_normal" value="Normal">
+                    <label class="form-check-label" for="cold_normal">It feels normal</label>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="cream_absorption">When you apply moisturizer, how quickly does it absorb into your skin?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cream_absorption" id="absorb_fast" value="Fast">
+                    <label class="form-check-label" for="absorb_fast">Fast</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cream_absorption" id="absorb_slow" value="Slow">
+                    <label class="form-check-label" for="absorb_slow">Slow</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="acne_prone">Do you have acne-prone skin?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="acne_prone" id="acne_no" value="No acne">
+                        <label class="form-check-label" for="acne_no">No, I don't have acne</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="acne_prone" id="acne_few" value="Few acne, maximum 5">
+                        <label class="form-check-label" for="acne_few">Yes, I have a few acne, maximum 5</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="acne_prone" id="acne_many" value="Many acne, more than 10">
+                        <label class="form-check-label" for="acne_many">Yes, I have quite a lot of acne, more than 10</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="acne_prone" id="acne_lot" value="A lot of acne">
+                        <label class="form-check-label" for="acne_lot">Yes, I have a lot of acne</label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="irritated_skin">Does your skin get irritated if you don't use moisturizer?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="irritated_skin" id="irritated_yes" value="Yes">
+                        <label class="form-check-label" for="irritated_yes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="irritated_skin" id="irritated_no" value="No">
+                        <label class="form-check-label" for="irritated_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+</body>
+</html>
